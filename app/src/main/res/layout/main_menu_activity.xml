@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <TextView
+        android:id="@+id/editTextUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="44dp"
+        android:textColor="@color/blueF1"
+        tools:text="Nombre del Usuario"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/button_liga"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:text="@string/fantasy"
+        android:layout_marginTop="230dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/redF1"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"/>
+
+    <Button
+        android:id="@+id/button_grand_prix"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:text="@string/grand_prix"
+        android:layout_below="@id/button_liga"
+        android:layout_marginTop="32dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/redF1"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"/>
+
+    <Button
+        android:id="@+id/button_knowledge"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:text="@string/knowledge"
+        android:layout_below="@id/button_grand_prix"
+        android:layout_marginTop="31dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/redF1"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"/>
+
+</RelativeLayout>

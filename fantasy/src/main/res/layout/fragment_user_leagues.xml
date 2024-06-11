@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+
+        <EditText
+            android:id="@+id/editTextCodeAccess"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Inserta el código de acceso"
+            android:textSize="13sp"
+            android:padding="8dp"/>
+
+
+        <Button
+            android:id="@+id/buttonSearchLeague"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:text="Buscar"
+            android:textSize="12sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="60dp"/>
+
+
+        <Button
+            android:id="@+id/buttonCreateLeague"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="+"
+            android:layout_gravity="end"/>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listViewLeagues"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@android:color/holo_red_dark"
+        android:dividerHeight="8dp"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>

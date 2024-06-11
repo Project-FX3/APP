@@ -1,0 +1,57 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_gravity="center"
+    android:padding="16dp">
+
+
+    <View
+        android:id="@+id/indicadorLiga"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@color/white"
+        android:layout_gravity="center_vertical" />
+
+
+    <View
+        android:layout_width="16dp"
+        android:layout_height="match_parent" />
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textViewNombreLiga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre de la Liga"
+            android:textSize="16sp"
+            android:textColor="@android:color/black" />
+
+
+        <TextView
+            android:id="@+id/textViewNumeroUsuarios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 Usuarios"
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/buttonUnirseLiga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Unirse"
+        android:layout_gravity="center_vertical"/>
+
+</LinearLayout>

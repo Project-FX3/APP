@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <TextView
+        android:id="@+id/gp_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Grand Prix Name"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/gp_locality_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Location"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/gp_country_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Country"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/gp_circuit_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="4dp"
+        android:textSize="14sp"
+        tools:text="Circuit Name" />
+
+    <ImageView
+        android:id="@+id/gp_circuit_image"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center"/>
+
+    <ListView
+        android:id="@+id/session_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"/>
+
+</LinearLayout>

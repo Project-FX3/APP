@@ -1,0 +1,65 @@
+plugins {
+    alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.daggerHiltAndroid)
+    alias(libs.plugins.ksp)
+}
+apply plugin: 'kotlin-kapt'
+
+android {
+    namespace 'dam.adri.domain'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 28
+        targetSdk 34
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    viewBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+
+    implementation project(':core:data')
+
+    // Moshi
+    implementation libs.moshi
+    implementation libs.moshi.kotlin
+    implementation libs.converter.moshi
+    ksp libs.androidx.room.compiler
+
+    implementation libs.kotlinx.coroutines.core
+    implementation libs.retrofit
+    implementation libs.converter.moshi
+    implementation libs.retrofit2.kotlin.coroutines.adapter
+
+    // Retrofit
+    implementation(libs.retrofit)
+
+    // KotlinPoet y Kotlinx-Metadata
+    implementation libs.kotlinpoet
+    implementation libs.kotlinx.metadata.jvm
+
+    // Inyeccion de dependencias
+    implementation libs.hilt.android.v2511
+    kapt libs.hilt.compiler.v2511
+
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+}
+kapt {
+    correctErrorTypes true
+}

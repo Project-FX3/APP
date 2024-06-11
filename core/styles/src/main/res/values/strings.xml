@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FX3Application</string>
+    <string name="location">Location</string>
+    <string name="country">Country</string>
+    <string name="login">Login</string>
+    <string name="create_user">Create User</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="user_not_found">Incorrect user and/or password</string>
+    <string name="unknown_error">Unknown error</string>
+    <string name="user_created_successfully">User created successfully</string>
+    <string name="create">Create</string>
+    <string name="cancel">Cancel</string>
+    <string name="fantasy">Fantasy</string>
+    <string name="grand_prix">Grand Prix</string>
+    <string name="knowledge">Knowledge</string>
+    <string name="login_success">Login successfully</string>
+    <string name="_0_usuarios">0 Usuarios</string>
+    <string name="nombre_de_la_liga">Nombre de la Liga</string>
+    <string name="puntuaci_n">Puntuation: %1$s</string>
+    <string name="code_access">Code Access: %1$s</string>
+    <string name="select_four_drivers">Select 4 drivers</string>
+    <string name="end_selection">End selection</string>
+    <string name="create_new_league">Create new league</string>
+    <string name="name_of_the_league">League name </string>
+    <string name="cargando">Loading...</string>
+    <string name="driver">Driver</string>
+    <string name="new_driver">New driver</string>
+    <string name="clasificaci_n_de_usuarios">User rating</string>
+    <string name="error_initializing_repositories">Error initializing</string>
+</resources>
