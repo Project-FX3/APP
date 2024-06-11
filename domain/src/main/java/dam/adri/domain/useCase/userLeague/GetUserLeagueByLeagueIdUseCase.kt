@@ -16,4 +16,12 @@ class GetUserLeagueByLeagueIdUseCase @Inject constructor(
         }
     }
 
+    suspend fun getNumberOfUsersByLeagueId(leagueId: Int): Int {
+        return try {
+            getUserLeagueByLeagueId(leagueId).size
+        } catch (e: Throwable) {
+            throw e
+        }
+    }
+
 }

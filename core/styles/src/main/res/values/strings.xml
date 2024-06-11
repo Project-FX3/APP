@@ -29,4 +29,5 @@
     <string name="new_driver">New driver</string>
     <string name="clasificaci_n_de_usuarios">User rating</string>
     <string name="error_initializing_repositories">Error initializing</string>
+    <string name="userSize">%1$s Users</string>
 </resources>

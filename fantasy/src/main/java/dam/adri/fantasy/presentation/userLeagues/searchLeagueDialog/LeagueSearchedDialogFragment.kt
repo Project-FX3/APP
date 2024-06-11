@@ -6,9 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.commit
-import dam.adri.fantasy.R
-import dam.adri.fantasy.databinding.DialogLeagueSearchedBinding
 import dam.adri.domain.modelo.entities.League
+import dam.adri.fantasy.databinding.DialogLeagueSearchedBinding
 import dam.adri.fantasy.presentation.userLeagues.searchLeagueDialog.selectDrivers.SelectDriversFragment
 
 class LeagueSearchedDialogFragment : DialogFragment() {
@@ -32,7 +31,7 @@ class LeagueSearchedDialogFragment : DialogFragment() {
         league = arguments?.getParcelable(ARG_LEAGUE)
         league?.let {
             binding.textViewNombreLiga.text = it.name
-            binding.textViewNumeroUsuarios.text = "0 Usuarios"
+            binding.textViewNumeroUsuarios.text = getString(dam.adri.core.styles.R.string.userSize, it.size.toString())
         }
 
         binding.buttonUnirseLiga.setOnClickListener {

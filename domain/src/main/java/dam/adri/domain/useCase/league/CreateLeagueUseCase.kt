@@ -12,7 +12,8 @@ class CreateLeagueUseCase @Inject constructor(
         val league = League(
             id = null,
             name = leagueName,
-            accesscode = ""
+            accesscode = "",
+            size = 0
         )
         return leagueRepository.save(league)
     }

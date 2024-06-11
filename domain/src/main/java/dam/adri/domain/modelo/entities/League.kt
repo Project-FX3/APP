@@ -7,12 +7,14 @@ import dam.adri.domain.modelo.dto.LeagueDto
 data class League(
     val id: Int?,
     val name: String?,
-    val accesscode: String?
+    val accesscode: String?,
+    var size: Int?
 ):Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString(),
-        parcel.readString()
+        parcel.readString(),
+        parcel.readInt(),
     ) {
     }
 
@@ -22,6 +24,7 @@ data class League(
         }
         parcel.writeString(name)
         parcel.writeString(accesscode)
+        parcel.writeInt(size ?: 0)
     }
 
     override fun describeContents(): Int {
@@ -43,6 +46,7 @@ fun LeagueDto.toLeague(): League {
     return League(
         id = this.id,
         name = this.name,
-        accesscode = this.accesscode
+        accesscode = this.accesscode,
+        size = 0
     )
 }
