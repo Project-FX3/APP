@@ -1,10 +1,11 @@
-package dam.adri.fantasy.presentation.qualificationLeague
+package dam.adri.fantasy.presentation.leagueQualification
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.viewModels
@@ -13,9 +14,9 @@ import dam.adri.core.data.utils.viewBinding
 import dam.adri.domain.modelo.entities.UserLeague
 import dam.adri.fantasy.R
 import dam.adri.fantasy.databinding.QualificationBinding
-import dam.adri.fantasy.presentation.leagueQualification.QualificationLeagueViewModel
 import dam.adri.fantasy.presentation.leagueQualification.adapter.QualificationLeagueAdapter
 import dam.adri.fantasy.presentation.userLeagueDescription.UserLeagueDescriptionFragment
+import dam.adri.fantasy.presentation.userLeagues.UserLeaguesFragment
 
 @AndroidEntryPoint
 class QualificationLeagueFragment : Fragment() {
@@ -36,6 +37,7 @@ class QualificationLeagueFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupAdapter()
         observeViewModel()
+        setUpUI()
 
 
         val leagueId = arguments?.getInt(ARG_LEAGUE_ID) ?: 0
@@ -57,6 +59,27 @@ class QualificationLeagueFragment : Fragment() {
         }
     }
 
+    private fun openUserLeaguesFragment() {
+        parentFragmentManager.commit {
+            replace(dam.adri.core.styles.R.id.fragment_container, UserLeaguesFragment())
+        }
+    }
+
+    private fun closeFragment(){
+        openUserLeaguesFragment()
+    }
+
+    private fun setUpUI(){
+        binding.buttonSalirLiga.setOnClickListener {
+            val leagueId = arguments?.getInt(ARG_LEAGUE_ID) ?: 0
+            viewModel.deleteLeague(leagueId)
+        }
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+            closeFragment()
+        }
+    }
+
     private fun observeViewModel() {
         viewModel.clasificacion.observe(viewLifecycleOwner) { usuarios ->
             adapter.updateUsuarios(usuarios)
@@ -64,6 +87,10 @@ class QualificationLeagueFragment : Fragment() {
 
         viewModel.error.observe(viewLifecycleOwner) { errorMessage ->
             Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_SHORT).show()
+        }
+
+        viewModel.deleted.observe(viewLifecycleOwner){
+            closeFragment()
         }
     }
 

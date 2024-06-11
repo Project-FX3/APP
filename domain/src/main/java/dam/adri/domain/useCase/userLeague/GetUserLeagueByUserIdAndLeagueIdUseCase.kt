@@ -14,4 +14,12 @@ class GetUserLeagueByUserIdAndLeagueIdUseCase @Inject constructor(
             throw e
         }
     }
+
+    suspend fun deleteUserLeague(userId: Int, leagueId: Int): Unit {
+     return try {
+         userLeagueRepository.deleteUserLeague(userId, leagueId)
+     } catch (e: Throwable) {
+         throw e
+     }
+    }
 }

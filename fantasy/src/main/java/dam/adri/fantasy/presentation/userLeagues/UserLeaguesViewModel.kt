@@ -59,7 +59,7 @@ class UserLeaguesViewModel @Inject constructor(
     }
 
 
-    private fun cargarLigasUsuario() {
+     fun cargarLigasUsuario() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val ligas = sessionUseCase.getUserId()

@@ -68,12 +68,18 @@ class UserLeagueRepositoryImpl @Inject constructor(
     }
 
     override suspend fun deleteUserLeague(userId: Int, leagueId: Int) {
+        val userLeague = getUserLeagueByUserIdAndLeagueId(userId, leagueId)
         val response = userLeagueApiService.deleteUserLeague(userId, leagueId)
         if (response.isSuccessful) {
-
-            cachedUserLeaguesByUserId = cachedUserLeaguesByUserId.filterNot { it.key == userId }
-            cachedUserLeaguesByLeagueId = cachedUserLeaguesByLeagueId.filterNot { it.key == leagueId }
-            cachedUserLeagueByUserIdAndLeagueId = cachedUserLeagueByUserIdAndLeagueId.filterNot { it.key == Pair(userId, leagueId) }
+            userLeague?.let {
+                cachedUserLeaguesByUserId = cachedUserLeaguesByUserId.mapValues { entry ->
+                    if (entry.key == userId) entry.value.filterNot { it.league == leagueId } else entry.value
+                }
+                cachedUserLeaguesByLeagueId = cachedUserLeaguesByLeagueId.mapValues { entry ->
+                    if (entry.key == leagueId) entry.value.filterNot { it == userLeague } else entry.value
+                }
+                cachedUserLeagueByUserIdAndLeagueId = cachedUserLeagueByUserIdAndLeagueId - (userId to leagueId)
+            }
         } else {
             throw Exception("Error deleting user league: ${response.errorBody()?.string()}")
         }

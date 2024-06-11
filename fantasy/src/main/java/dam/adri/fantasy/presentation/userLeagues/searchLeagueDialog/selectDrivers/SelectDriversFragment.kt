@@ -19,7 +19,6 @@ import dam.adri.core.data.utils.viewBinding
 import dam.adri.domain.modelo.entities.Driver
 import dam.adri.fantasy.R
 import dam.adri.fantasy.databinding.DriversSelectionFragmentBinding
-import dam.adri.fantasy.presentation.qualificationLeague.QualificationLeagueFragment
 import dam.adri.fantasy.presentation.userLeagues.UserLeaguesFragment
 
 @AndroidEntryPoint

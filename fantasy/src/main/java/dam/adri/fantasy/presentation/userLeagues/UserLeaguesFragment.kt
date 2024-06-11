@@ -7,15 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.fragment.app.commit
+import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import dam.adri.core.data.utils.viewBinding
 import dam.adri.domain.modelo.entities.League
 import dam.adri.fantasy.R
 import dam.adri.fantasy.databinding.FragmentUserLeaguesBinding
 import dam.adri.fantasy.presentation.createLeague.CreateLeagueDialogFragment
-import dam.adri.fantasy.presentation.qualificationLeague.QualificationLeagueFragment
+import dam.adri.fantasy.presentation.leagueQualification.QualificationLeagueFragment
 import dam.adri.fantasy.presentation.userLeagues.adapter.LeagueListViewAdapter
 import dam.adri.fantasy.presentation.userLeagues.searchLeagueDialog.LeagueSearchedDialogFragment
 
@@ -64,7 +64,6 @@ class UserLeaguesFragment : Fragment() {
         val fragment = QualificationLeagueFragment.newInstance(leagueId)
         parentFragmentManager.commit {
             replace(dam.adri.core.styles.R.id.fragment_container, fragment)
-            addToBackStack(null)
         }
     }
 
